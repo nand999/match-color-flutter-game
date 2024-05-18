@@ -10,11 +10,11 @@ class AboutMe extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "BELAJAR WARNA",
+          "Tentang Kami",
           style: TextStyle(color: Colors.white),
         ),
         leading: Icon(
-          Icons.adb,
+          Icons.abc,
           color: Colors.white,
         ),
         actions: <Widget>[
@@ -68,7 +68,7 @@ class AboutMe extends StatelessWidget {
                                       0.25, // Mengatur lebar agar gambar menjadi lingkaran
                                   decoration: BoxDecoration(
                                     image: DecorationImage(
-                                      image: AssetImage("assets/logo.jpg"),
+                                      image: AssetImage("assets/logo.png"),
                                       fit: BoxFit.cover,
                                     ),
                                   ),
@@ -88,8 +88,8 @@ class AboutMe extends StatelessWidget {
                               ),
                               child: Text("Developed By:"),
                             ),
-                            Text("Ananda Dwi Ariano",style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),),
-                            Text("Mahasiswa Politeknik negeri jember jurusan teknologi informasi angkatan 2022", textAlign: TextAlign.center,),
+                            Text("Kelompok 5",style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),),
+                            Text("Bootcamp A Journey Into Mobile App Development", textAlign: TextAlign.center,),
                             Container(
                               margin: EdgeInsets.only(
                                 top: 15

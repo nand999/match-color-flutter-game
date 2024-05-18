@@ -21,7 +21,6 @@ class _ColorLearningBaruState extends State<ColorLearningBaru> {
 
   @override
   void initState() {
-   
     super.initState();
     availableColors = [
       Colors.blue,
@@ -39,7 +38,6 @@ class _ColorLearningBaruState extends State<ColorLearningBaru> {
     ];
     generateRandomColors();
   }
-
 
   void generateRandomColors() {
     final _random = Random();
@@ -70,11 +68,11 @@ class _ColorLearningBaruState extends State<ColorLearningBaru> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "BELAJAR WARNA",
+          "Mencocokkan Warna",
           style: TextStyle(color: Colors.white),
         ),
         leading: Icon(
-          Icons.adb,
+          Icons.abc,
           color: Colors.white,
         ),
         actions: <Widget>[
@@ -95,13 +93,17 @@ class _ColorLearningBaruState extends State<ColorLearningBaru> {
         flexibleSpace: Container(
           decoration: BoxDecoration(
               gradient: LinearGradient(
-                  colors: [Colors.deepOrange, Colors.cyan],
+                  colors: [Colors.cyan, Colors.cyan],
                   begin: FractionalOffset.topRight,
                   end: FractionalOffset.topLeft)),
         ),
       ),
       body: Column(
         children: <Widget>[
+
+          //widget container digunakan sebagai wadah wiget child didalamnya
+
+
           Container(
             margin: EdgeInsets.all(20),
             child: Row(
@@ -226,16 +228,21 @@ class _ColorLearningBaruState extends State<ColorLearningBaru> {
               ),
             ),
           ),
+
+
+          // widget elevated button merupakan widget tombol
+
+
           ElevatedButton(
             style: ButtonStyle(
-                backgroundColor: MaterialStatePropertyAll<Color>(Colors.black)),
+                backgroundColor: MaterialStatePropertyAll<Color>(Colors.cyan)),
             onPressed: () {
               setState(() {
                 generateRandomColors();
                 // targetColor = null;
               });
             },
-            child: Text('Refresh Warna', style: TextStyle(color: Colors.white)),
+            child: Text('Refresh Warna', style: TextStyle(color: Colors.black)),
           ),
         ],
       ),
@@ -248,6 +255,9 @@ class _ColorLearningBaruState extends State<ColorLearningBaru> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
+
+          // widget text untuk menampilkan teks
+
           title: Text(
             'Benar! warna yang ditampilkan:',
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
@@ -316,29 +326,28 @@ class _ColorLearningBaruState extends State<ColorLearningBaru> {
   }
 
   void showResultDialog(String message) {
-  showDialog(
-    context: context,
-    builder: (BuildContext context) {
-      return AlertDialog(
-        title: Text(
-          'Salah!',
-          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-        ),
-        content: Text(
-          message,
-          style: TextStyle(fontSize: 18),
-        ),
-        actions: <Widget>[
-          TextButton(
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-            child: Text('OK'),
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text(
+            'Salah!',
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
-        ],
-      );
-    },
-  );
-}
-
+          content: Text(
+            message,
+            style: TextStyle(fontSize: 18),
+          ),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text('OK'),
+            ),
+          ],
+        );
+      },
+    );
+  }
 }

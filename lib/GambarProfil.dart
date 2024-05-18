@@ -6,6 +6,7 @@ class GambarProfil extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Center(
           child: Padding(
@@ -16,14 +17,13 @@ class GambarProfil extends StatelessWidget {
               child: Hero(
                 tag: "pp",
                 child: ClipRRect(
-                 
                   borderRadius: BorderRadius.circular(0),
                   child: Container(
                     height: 350,
                     width: 350, // Mengatur lebar agar gambar menjadi lingkaran
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image: AssetImage("assets/logo.jpg"),
+                        image: AssetImage("assets/logo.png"),
                         fit: BoxFit.cover,
                       ),
                     ),

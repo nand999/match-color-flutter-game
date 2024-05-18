@@ -1,4 +1,4 @@
-import 'package:coba_dragable/ColorLearningBaru.dart';
+import 'package:coba_dragable/Menu.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -13,11 +13,10 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-        // Menunda selama 3 detik sebelum pindah ke ColorLearning
     Future.delayed(Duration(seconds: 3), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => ColorLearningBaru()),
+        MaterialPageRoute(builder: (context) => Menu()),
       );
     });
     return Scaffold(
@@ -62,24 +61,29 @@ class SplashScreen extends StatelessWidget {
                         begin: Alignment.topCenter,
                         end: Alignment.bottomCenter))),
           ),
+
+          // widget center untuk meletakkan child widget ditengah
+
           Center(
+
+            // widget column untuk menyusun widget children kebawah
+
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Belajar",
+                  "Aplikasi",
                   style: TextStyle(
                       color: Colors.black, fontSize: 55, fontFamily: "Lobster"),
                 ),
                 Text(
-                  "        Warna",
+                  "        Edukasi",
                   style: TextStyle(
                       color: Colors.black, fontSize: 55, fontFamily: "Lobster"),
                 ),
               ],
             ),
           ),
-
         ],
       ),
     );
