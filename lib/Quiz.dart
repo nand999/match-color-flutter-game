@@ -233,7 +233,7 @@ class Quiz extends StatelessWidget {
                   child: ElevatedButton(
                     onPressed: () => answerQuestion(answer),
                     style: ElevatedButton.styleFrom(
-                      primary: Colors.blue,
+                      primary: Colors.cyan,
                       onPrimary: Colors.white,
                       padding: EdgeInsets.symmetric(vertical: 12),
                       shape: RoundedRectangleBorder(
